@@ -41,16 +41,16 @@ public class ItemsQuantityCalculator {
 
 		switch (season) {
 		case "Spring":
-			list.addAll(listOfItems.addAutumnItems(list));
+			listOfItems.addAutumnItems(list);
 			break;
 		case "Summer":
-			list.addAll(listOfItems.addSummerItems(list));
+			listOfItems.addSummerItems(list);
 			break;
 		case "Autumn":
-			list.addAll(listOfItems.addAutumnItems(list));
+			listOfItems.addAutumnItems(list);
 			break;
 		case "Winter":
-			list.addAll(listOfItems.addWinterItems(list));
+			listOfItems.addWinterItems(list);
 			break;
 		}
 

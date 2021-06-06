@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Trek app</title>
+</head>
+<body>
+	<h2>Trek app - what will you need!</h2>
+
+	<h4>Your trek:</h4>
+
+	<table>
+		<tbody>
+			<p th:text="'Season: ' + ${param.season}">
+			<p th:text="'Distance (km): ' + ${param.kmOfTrek}">
+			<p th:text="'Duration (days): ' + ${param.daysOfTrek}">
+		</tbody>
+	</table>
+
+	<h4>You will need:</h4>
+
+	<p th:value="${param.season}">Choose the right clothes and shoes
+		for the season.
+	<h4>Special items:</h4>
+
+
+	<table>
+		<tbody>
+			<tr th:each="specItems : ${specialItemResult}">
+				<td th:text="${specItems.name}">
+		</tbody>
+
+	</table>
+
+	<h4>Food:</h4>
+	<table>
+		<thead>
+			<tr>
+				<th>Food</th>
+				<th>Quantity (kg)</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="foodItems : ${foodResult}">
+
+				<td th:text="${foodItems.name}" />
+				<td th:text="${foodItems.weight}" />
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<a href="/"> Back to Home</a>
+	<br>
+	<br>
+	<hr>
+</body>
+<footer> created by ToKaCoDe </footer>
+</html>

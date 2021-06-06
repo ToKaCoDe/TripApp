@@ -16,9 +16,10 @@ public class ItemsQuantityCalculator {
 	public List<Item> needWater(int distance, List<Item> list) {
 
 		double waterQuantity = distance * WATER_PER_KILOMETER;
+		double rounderWaterQuantity = Math.round(waterQuantity*100.0)/100.0;
 
 		for (int i = 0; i < list.size(); i++) {
-			list.get(i).setWeight(waterQuantity);
+			list.get(i).setWeight(rounderWaterQuantity);
 		}
 
 		return list;
@@ -29,7 +30,8 @@ public class ItemsQuantityCalculator {
 		for (int i = 0; i < list.size(); i++) {
 			double foodQuantity = list.get(i).getWeight();
 			double newFoodQuantity = days * foodQuantity;
-			list.get(i).setWeight(newFoodQuantity);
+			double roundedNewFoodQuantity = Math.round(newFoodQuantity*100.0)/100.0;
+			list.get(i).setWeight(roundedNewFoodQuantity);
 		}
 
 		return list;
@@ -58,7 +60,7 @@ public class ItemsQuantityCalculator {
 	public List<Item> needNightItems(int days, List<Item> list) {
 
 		if (days > 1 ) {
-			list.addAll(listOfItems.addNightItems(list));
+			listOfItems.addNightItems(list);
 		}
 
 		return list;

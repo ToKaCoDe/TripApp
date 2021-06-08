@@ -93,6 +93,10 @@ public class ItemsQuantityCalculator {
 		List<Item> seasonItems = new ArrayList<>();
 		calculator.needSeasonItems(season, seasonItems);
 		list.addAll(seasonItems);
+		
+		List<Item> specialItems = new ArrayList<>();
+		listOfItems.addSpecialItems(specialItems);
+		list.addAll(specialItems);
 
 		return list;
 	}
